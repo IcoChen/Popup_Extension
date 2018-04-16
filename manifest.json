@@ -1,0 +1,15 @@
+{
+  "manifest_version": 2,
+
+  "name": "PopUp - Sub it",
+  "description": "Understand the content of foreign language",
+  "version": "1.0",
+
+  "browser_action": {
+   "default_icon": "icon.png",
+   "default_popup": "popup.html"
+  },
+  "permissions": [
+   "activeTab"
+   ]
+}
