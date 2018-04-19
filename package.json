@@ -1,0 +1,35 @@
+{
+  "devDependencies": {
+    "@babel/core": "^7.0.0-beta.44",
+    "@babel/preset-env": "^7.0.0-beta.44",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.1",
+    "gulp-coffee": "latest",
+    "gulp-concat": "latest",
+    "gulp-connect": "latest",
+    "gulp-es6-transpiler": "^1.0.1",
+    "gulp-sass": "latest",
+    "gulp-uglify": "latest",
+    "gulp-util": "^3.0.8"
+  },
+  "name": "popup_extension_new",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IcoChen/Popup_Extension.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IcoChen/Popup_Extension/issues"
+  },
+  "homepage": "https://github.com/IcoChen/Popup_Extension#readme",
+  "description": "",
+  "dependencies": {
+    "gulp-eslint": "^4.0.2"
+  }
+}

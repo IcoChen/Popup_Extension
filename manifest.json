@@ -1,15 +1,23 @@
 {
-  "manifest_version": 2,
+ "manifest_version": 2,
 
-  "name": "PopUp - Sub it",
-  "description": "Understand the content of foreign language",
-  "version": "1.0",
-  "icons": {"128": "popup.png"},
-  "browser_action": {
-   "default_icon": "approved1.png",
-   "default_popup": "popup.html"
-  },
-  "permissions": [
-   "activeTab"
-   ]
+ "name": "PopUp - Sub it",
+ "description": "Interactive way of displaying old-school boring tabs",
+ "version": "1.1.1",
+ "homepage_url": "http://www.popthatsubs.com",
+ "icons": {"128": "images/popup.png"},
+ "browser_action": {
+  "default_icon": "images/approved1.png"
+ },
+ "chrome_url_overrides": {
+     "newtab": "index.html"
+   },
+   "background": {
+     "scripts": ["src/js/background.js"]
+   },
+ "permissions": [
+  "tabs",
+  "storage",
+  "activeTab"
+  ]
 }
