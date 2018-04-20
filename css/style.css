@@ -14,29 +14,29 @@ body {
 
 
 @font-face {
-  font-family: 'tr2n';
-  src: url('../fonts/tr2n.ttf') format("truetype");
+  font-family: 'Tr2n';
+  src: url('../fonts/Tr2n.ttf') format("truetype");
 }
 
 @font-face {
-  font-family: 'VCR OSD MONO';
-  src: url('../fonts/VCR_OSD_MONO.ttf') format("truetype");
+  font-family: 'Irresistor';
+  src: url('../fonts/Irresistor.ttf') format("truetype");
 }
 
 @font-face {
-font-family: 'Andale Mono';
-src: url("../fonts/andale-mono.ttf") format("truetype");
+font-family: 'Xirod';
+src: url("../fonts/xirod.ttf") format("truetype");
 }
 
 @font-face {
-font-family: 'gamegirl';
-src: url("../fonts/gamegirl.ttf") format("truetype");
+font-family: 'Sofachrome';
+src: url("../fonts/sofachrome.ttf") format("truetype");
 }
 
-@font-face {
+/*@font-face {
 font-family: 'joystix';
 src: url("../fonts/joystix.ttf") format("truetype");
-}
+}*/
 
 /* header */
 header {
@@ -277,7 +277,7 @@ header {
 
 #monster-container {
   height: inherit;
-  width: 400px;
+  width: 500px;
   margin: 0 auto;
   position: relative;
   min-height: 400px;
@@ -309,7 +309,7 @@ header {
   bottom: 50px;
   width: 100%;
   text-align: center;
-  font-family: 'gamegirl';
+  font-family: 'Sofachrome';
   font-size: 18px;
   opacity: .75;
   color: #545454;
@@ -338,7 +338,7 @@ footer {
 #tab-count {
   text-align: center;
   font-size: 15px;
-  font-family: 'Andale Mono';
+  font-family: 'Irresistor';
   text-transform: uppercase;
   color: #545454;
   font-weight: normal;
@@ -386,6 +386,10 @@ header .tip img {
   text-align: center;
   bottom: 0px;
   position: absolute;
+  font-family: 'Xirod';
+  text-decoration: none;
+  font-size: 14px;
+  opacity: .85;
 }
 
 .credits img {
