@@ -14,29 +14,29 @@ body {
 
 
 @font-face {
-  font-family: 'tr2n';
-  src: url('../fonts/tr2n.ttf') format("truetype");
+  font-family: 'Tr2n';
+  src: url('../fonts/Tr2n.ttf') format("truetype");
 }
 
 @font-face {
-  font-family: 'VCR OSD MONO';
-  src: url('../fonts/VCR_OSD_MONO.ttf') format("truetype");
+  font-family: 'Xirod';
+  src: url('../fonts/xirod.ttf') format("truetype");
 }
 
 @font-face {
-font-family: 'Andale Mono';
-src: url("../fonts/andale-mono.ttf") format("truetype");
+font-family: 'Irresistor';
+src: url("../fonts/Irresistor.ttf") format("truetype");
 }
 
 @font-face {
-font-family: 'gamegirl';
-src: url("../fonts/gamegirl.ttf") format("truetype");
+font-family: 'Sofachrome';
+src: url("../fonts/sofachromerg.ttf") format("truetype");
 }
 
-@font-face {
+/*@font-face {
 font-family: 'joystix';
 src: url("../fonts/joystix.ttf") format("truetype");
-}
+}*/
 
 /* header */
 header {
@@ -139,14 +139,14 @@ header {
 #evolution-outer-container p {
   text-align: center;
   padding-bottom: 5px;
-  font-family: 'tr2n';
+  font-family: 'Tr2n';
   color: #545454;
   font-weight: normal;
 }
 
 #evolution-outer-container p {
   padding-top: 12px;
-  font-family: 'tr2n';
+  font-family: 'Tr2n';
   font-weight: normal;
   font-size: 15px;
   color: #545454;
@@ -277,7 +277,7 @@ header {
 
 #monster-container {
   height: inherit;
-  width: 400px;
+  width: 500px;
   margin: 0 auto;
   position: relative;
   min-height: 400px;
@@ -309,8 +309,8 @@ header {
   bottom: 50px;
   width: 100%;
   text-align: center;
-  font-family: 'gamegirl';
-  font-size: 18px;
+  font-family: 'Sofachrome';
+  font-size: 19px;
   opacity: .75;
   color: #545454;
 }
@@ -338,7 +338,7 @@ footer {
 #tab-count {
   text-align: center;
   font-size: 15px;
-  font-family: 'Andale Mono';
+  font-family: 'Irresistor';
   text-transform: uppercase;
   color: #545454;
   font-weight: normal;
@@ -384,8 +384,12 @@ header .tip img {
   margin: 0 auto;
   display: block;
   text-align: center;
+  font-family: 'Sofachrome';
+  font-size: 13px;
+  text-decoration: none;
   bottom: 0px;
   position: absolute;
+  opacity: .85;
 }
 
 .credits img {
@@ -400,7 +404,7 @@ header .tip img {
   width: 200px;
   padding: 10px;
   display: none;
-  font-family: 'Andale Mono';
+  font-family: 'Irresistor';
 }
 
 #evolution-tip {
