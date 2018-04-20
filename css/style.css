@@ -14,8 +14,8 @@ body {
 
 
 @font-face {
-  font-family: 'visitor';
-  src: url('../fonts/visitor.ttf') format("truetype");
+  font-family: 'tr2n';
+  src: url('../fonts/tr2n.ttf') format("truetype");
 }
 
 @font-face {
@@ -139,14 +139,14 @@ header {
 #evolution-outer-container p {
   text-align: center;
   padding-bottom: 5px;
-  font-family: 'visitor';
+  font-family: 'tr2n';
   color: #545454;
   font-weight: normal;
 }
 
 #evolution-outer-container p {
   padding-top: 12px;
-  font-family: 'visitor';
+  font-family: 'tr2n';
   font-weight: normal;
   font-size: 15px;
   color: #545454;
@@ -212,7 +212,7 @@ header {
 #hp-outer-container p {
   text-align: center;
   padding-bottom: 5px;
-  font-family: 'visitor';
+  font-family: 'tr2n';
   color: #545454;
   font-weight: normal;
 
