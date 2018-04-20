@@ -85,61 +85,55 @@ const helper = {
     const randIndex = Math.floor(Math.random() * 3);
     const stateAssets = {
       state1: [
-        `../../assets/level-${state.evolutionLevel}/monster-state-1-v1.gif`,
-        `../../assets/level-${state.evolutionLevel}/monster-state-1-v2.gif`,
-        `../../assets/level-${state.evolutionLevel}/monster-state-1-v3.gif`
+        `../../assets/evolution/alien_green_celebrate.gif`
       ],
       state2: [
-        `../../assets/level-${state.evolutionLevel}/monster-state-2-v1.gif`,
-        `../../assets/level-${state.evolutionLevel}/monster-state-2-v2.gif`,
-        `../../assets/level-${state.evolutionLevel}/monster-state-2-v3.gif`
+        `/../../assets/evolution/alien_green_dance.gif`
       ],
       state3: [
-        `../../assets/level-${state.evolutionLevel}/monster-state-3-v1.gif`,
-        `../../assets/level-${state.evolutionLevel}/monster-state-3-v2.gif`,
-        `../../assets/level-${state.evolutionLevel}/monster-state-3-v3.gif`
+        `../../assets/evolution/alien_green_thanks.gif`
       ],
       state4: [
-        `../../assets/level-${state.evolutionLevel}/monster-state-4-v1.gif`,
-        `../../assets/level-${state.evolutionLevel}/monster-state-4-v2.gif`,
-        `../../assets/level-${state.evolutionLevel}/monster-state-4-v3.gif`
+        `../../assets/evolution/alien_green_idle.gif`
       ],
       state5: [
-        `../../assets/level-${state.evolutionLevel}/monster-state-5-v1.gif`,
-        `../../assets/level-${state.evolutionLevel}/monster-state-5-v2.gif`,
-        `../../assets/level-${state.evolutionLevel}/monster-state-5-v3.gif`
+        `../../assets/evolution/alien_green_sad.gif`
       ],
       state6: [
-        `../../assets/level-${state.evolutionLevel}/monster-state-6-v1.gif`,
-        `../../assets/level-${state.evolutionLevel}/monster-state-6-v1.gif`,
-        `../../assets/level-${state.evolutionLevel}/monster-state-6-v1.gif`
+        `../../assets/evolution/alien_green_eat.gif`
+      ],
+      state7: [
+        `../../assets/evolution/alien_green_attack.gif`
+      ],
+      state8: [
+        `../../monster-state-1-variant-1.gif`
       ]
     };
 
     if (state.hp === 100) {
       // monster is full health
-      elements.monster.src = stateAssets.state1[randIndex];
+      elements.monster.src = stateAssets.state1;
     } else if (state.hp <= 99 && state.hp >= 80) {
       // monster is content
-      elements.monster.src = stateAssets.state1[randIndex];
+      elements.monster.src = stateAssets.state1;
     } else if (state.hp <= 79 && state.hp >= 60) {
       // monster is irritated
-      elements.monster.src = stateAssets.state2[randIndex];
+      elements.monster.src = stateAssets.state2;
     } else if (state.hp <= 59 && state.hp >= 40) {
       // monster is angry
-      elements.monster.src = stateAssets.state3[randIndex];
+      elements.monster.src = stateAssets.state3;
     } else if (state.hp <= 39 && state.hp >= 20) {
       // monster is sick
       //TODO: CHANGE THIS TO STATE 4
-      elements.monster.src = stateAssets.state4[randIndex];
+      elements.monster.src = stateAssets.state4;
     } else if (state.hp <= 19 && state.hp >= 1) {
       // monster is dying
       //TODO: CHANGE THIS TO STATE 5
-      elements.monster.src = stateAssets.state5[randIndex];
+      elements.monster.src = stateAssets.state5;
     } else if (state.hp <= 0) {
       // monster is dead (RIP)
       //TODO: CHANGE THIS TO STATE 6
-      elements.monster.src = stateAssets.state6[randIndex];
+      elements.monster.src = stateAssets.state6;
     }
   },
   /*
