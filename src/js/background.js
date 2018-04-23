@@ -109,18 +109,18 @@ function updateMonsterState() {
       text = [ `I c u with all them tabs`, `So, how many tabs r u gonna make? 6? 7? 8? -_-`];
       state.monsterStatus = text[randIndex];
     } else if (state.tabCount <= 13 && state.tabCount >= 10) {
-      text = [`Um.. are you serious?`, `Is it you, Dounan?.`];
+      text = [`Um.. are you serious?`, `Chill and close some tabs yo.`];
       state.monsterStatus = text[randIndex];
     } else if (state.tabCount <= 17 && state.tabCount >= 14) {
-      text = [`If you can tell me the 3rd tab from the left, I respect you. If not, close that $***`, `Hi, Forrest! Chill. bro. chill.`];
+      text = [`If you can tell me the 3rd tab from the left, I respect you. If not, close that $***`, `Please press COMMAND+W till I'm happy`];
       state.monsterStatus = text[randIndex];
     } else if (state.tabCount <= 21 && state.tabCount >= 18) {
-      text = [`At this point, uninstall chrome :>`, `l2t you newb. psst..! it means Learn to Tab u scrub`];
+      text = [`At this point, uninstall chrome :>`, `At this point, uninstall chrome :>`];
       state.monsterStatus = text[randIndex];
     } else if (state.tabCount != 33 && state.tabCount >=22) {
-      state.monsterStatus = `Ting is as confused.`;
+      state.monsterStatus = `You are confused.`;
     } else if (state.tabCount = 33) {
-      state.monsterStatus = 'Welcome to the elite Po-Tah-To clan. You can now add this to your resume. Achievement unlocked: Hidden :33 (kisses) '
+      state.monsterStatus = 'Welcome to the elite Po-Tah-To clan. Achievement unlocked: Hidden 33. '
     }
 
     chrome.storage.local.set({monster: state}, () => {
