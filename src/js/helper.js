@@ -41,7 +41,7 @@
 
 const helper = {
 
-  poop: (elements, state) => {
+  poop: (elements, status) => {
     const allPoops = [elements.poop.poop1, elements.poop.poop2, elements.poop.poop3,
       elements.poop.poop4, elements.poop.poop5, elements.poop.poop6];
     let displayPoops = [];
@@ -52,19 +52,19 @@ const helper = {
     });
 
     // level 1 and level 2 have color thus we need colorized poops
-    if (state.evolutionLevel > 0) {
+    if (status.evolutionLevel > 0) {
       allPoops.forEach(elem => {
         elem.classList.add(`color`);
       });
     }
 
-    if (state.hp <= 59 && state.hp >= 40) {
+    if (status.hp <= 59 && status.hp >= 40) {
       // monster is angry, show 4 poops
       displayPoops = allPoops.slice(0,1);
-    } else if (state.hp <= 39 && state.hp >= 20) {
+    } else if (status.hp <= 39 && status.hp >= 20) {
       // monster is sick, show 5 poops
       displayPoops = allPoops.slice(0,3);
-    } else if (state.hp <= 19 && state.hp >= 1) {
+    } else if (status.hp <= 19 && status.hp >= 1) {
       // monster is dying, show 6 poops
       // no need to reassign poops array if all shown
       displayPoops = allPoops;
@@ -78,10 +78,10 @@ const helper = {
   /*
   * setRandomAsset
   *
-  * Pick one of the three assets randomly, at each state. Diversified graphics to keep the
+  * Pick one of the three assets randomly, at each status. Diversified graphics to keep the
   * user entertained.
   */
-  setRandomAsset: (elements, state) => {
+  setRandomAsset: (elements, status) => {
     const randIndex = Math.floor(Math.random() * 3);
     const stateAssets = {
       state1: [
@@ -106,33 +106,33 @@ const helper = {
         `../../assets/evolution/alien_green_attack.gif`
       ],
       state8: [
-        `../../monster-state-1-variant-1.gif`
+        `../../monster-status-1-variant-1.gif`
       ]
     };
 
-    if (state.hp === 100) {
+    if (status.hp === 100) {
       // monster is full health
       elements.monster.src = stateAssets.state1;
-    } else if (state.hp <= 99 && state.hp >= 80) {
+    } else if (status.hp <= 99 && status.hp >= 80) {
       // monster is content
       elements.monster.src = stateAssets.state1;
-    } else if (state.hp <= 79 && state.hp >= 60) {
+    } else if (status.hp <= 79 && status.hp >= 60) {
       // monster is irritated
       elements.monster.src = stateAssets.state2;
-    } else if (state.hp <= 59 && state.hp >= 40) {
+    } else if (status.hp <= 59 && status.hp >= 40) {
       // monster is angry
       elements.monster.src = stateAssets.state3;
-    } else if (state.hp <= 39 && state.hp >= 20) {
+    } else if (status.hp <= 39 && status.hp >= 20) {
       // monster is sick
-      //TODO: CHANGE THIS TO STATE 4
+      //TODO: CHANGE THIS TO status 4
       elements.monster.src = stateAssets.state4;
-    } else if (state.hp <= 19 && state.hp >= 1) {
+    } else if (status.hp <= 19 && status.hp >= 1) {
       // monster is dying
-      //TODO: CHANGE THIS TO STATE 5
+      //TODO: CHANGE THIS TO status 5
       elements.monster.src = stateAssets.state5;
-    } else if (state.hp <= 0) {
+    } else if (status.hp <= 0) {
       // monster is dead (RIP)
-      //TODO: CHANGE THIS TO STATE 6
+      //TODO: CHANGE THIS TO status 6
       elements.monster.src = stateAssets.state6;
     }
   },
@@ -142,10 +142,10 @@ const helper = {
   * Start the interval timer that will be used to evolve based on tab count
   * over a period of time.
   */
-  handleEvolutionTimer: (elements, state) => {
+  handleEvolutionTimer: (elements, status) => {
     // if more than 5 tabs, kill evolution timer else start it if it hasnt already been.
     // remove pending blink animation on next evolution segment.
-    if (state.tabCount > 5) {
+    if (status.tabCount > 5) {
       const uiSegments = elements.evolutionUISegments;
       for (let idx = 0; idx < uiSegments.length; idx++) {
         uiSegments[idx].classList.remove(`toggle`);
@@ -157,9 +157,9 @@ const helper = {
   *
   * Update evolution UI.
   */
-  updateEvolutionUI: (elements, state) => {
-    const evolutionLevel = state.evolutionLevel;
-    const numberOfSegments = state.evolutionStage;
+  updateEvolutionUI: (elements, status) => {
+    const evolutionLevel = status.evolutionLevel;
+    const numberOfSegments = status.evolutionStage;
     const uiSegments = elements.evolutionUISegments;
 
     // we either havent evolved or are on a new evolution stage. turn off all evolution segments.
@@ -186,29 +186,29 @@ const helper = {
 
     elements.evolutionSilhouettes.classList.remove(`level-0`);
     elements.evolutionSilhouettes.classList.remove(`level-1`);
-    elements.evolutionSilhouettes.classList.add(`level-${state.evolutionLevel}`);
+    elements.evolutionSilhouettes.classList.add(`level-${status.evolutionLevel}`);
 
-    // helper.setUI(elements, state);
+    // helper.setUI(elements, status);
   },
   /*
   * setUI
   *
-  * set the UI based on current state
+  * set the UI based on current status
   */
-  setUI: (elements, state) => {
-    const hp = state.hp <= 0 ? 0 : state.hp;
+  setUI: (elements, status) => {
+    const hp = status.hp <= 0 ? 0 : status.hp;
 
     // handle hp update
-    elements.evolutionState.innerText = `${state.evolutionStage}/10`;
+    elements.evolutionState.innerText = `${status.evolutionStage}/10`;
     elements.hpProgressBar.style.width = `${hp}%`;
     elements.hpState.innerText = `${hp}/100`;
-    elements.monsterStatus.innerText = `${state.monsterStatus}`;
-    elements.tabCount.innerText = `You have ${state.tabCount} tabs open`;
+    elements.monsterStatus.innerText = `${status.monsterStatus}`;
+    elements.tabCount.innerText = `You have ${status.tabCount} tabs open`;
 
     // set random monster asset from the variants
-    helper.setRandomAsset(elements, state);
+    helper.setRandomAsset(elements, status);
 
     // to poop or not to poop, that is the question
-    helper.poop(elements, state);
+    helper.poop(elements, status);
   }
 };

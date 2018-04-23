@@ -22,7 +22,7 @@ function getStorage() {
         resolve(data.monster);
       } else {
           console.log("DEBUG: GETSTORAGE ELSE");
-          const state = {
+          const status = {
             hp: MAX_HEALTH,
             evolutionLevel: 0,
             evolutionStage: 0,
@@ -33,11 +33,11 @@ function getStorage() {
           };
 
           getTabsCount().then(tabCount => {
-            state.tabCount = tabCount;
-            return chrome.storage.local.set({monster: state});
+            status.tabCount = tabCount;
+            return chrome.storage.local.set({monster: status});
           }).then(() => {
-            globalState = state;
-            resolve(state);
+            globalState = status;
+            resolve(status);
           });
       }
     });
@@ -84,54 +84,54 @@ function handleEvolutionTimer() {
 
       globalState.lastUpdatedAt = Date.now();
       chrome.storage.local.set({monster: globalState});
-      // console.log(`DEBUG: evolution timer started`, evolutionInterval, state);
+      // console.log(`DEBUG: evolution timer started`, evolutionInterval, status);
     }, TIME_INTERVAL);
   }
 }
 
 function updateMonsterState() {
-  let state = {};
+  let status = {};
 
   getStorage().then(result => {
-    state = result;
+    status = result;
     return getTabsCount();
   }).then(tabCount => {
-    state.tabCount = tabCount;
-    state.hp = MAX_HEALTH - 4 * tabCount;
+    status.tabCount = tabCount;
+    status.hp = MAX_HEALTH - 4 * tabCount;
     let text = [];
     const randIndex = Math.floor(Math.random() * (2));
-    if (state.tabCount <= 2) {
-      state.monsterStatus = `You are a boss of tabs... and that's a good thing :)`;
-    } else if (state.tabCount <= 5 && state.tabCount >= 2) {
+    if (status.tabCount <= 2) {
+      status.monsterStatus = `You are a boss of tabs... and that's a good thing :)`;
+    } else if (status.tabCount <= 5 && status.tabCount >= 2) {
       text = [`Damn son, not bad`, `Chill with the tabs`];
-      state.monsterStatus = text[randIndex];
-    } else if (state.tabCount <= 9 && state.tabCount >= 6) {
+      status.monsterStatus = text[randIndex];
+    } else if (status.tabCount <= 9 && status.tabCount >= 6) {
       text = [ `I c u with all them tabs`, `So, how many tabs r u gonna make? 6? 7? 8? -_-`];
-      state.monsterStatus = text[randIndex];
-    } else if (state.tabCount <= 13 && state.tabCount >= 10) {
+      status.monsterStatus = text[randIndex];
+    } else if (status.tabCount <= 13 && status.tabCount >= 10) {
       text = [`Um.. are you serious?`, `Chill and close some tabs yo.`];
-      state.monsterStatus = text[randIndex];
-    } else if (state.tabCount <= 17 && state.tabCount >= 14) {
+      status.monsterStatus = text[randIndex];
+    } else if (status.tabCount <= 17 && status.tabCount >= 14) {
       text = [`If you can tell me the 3rd tab from the left, I respect you. If not, close that $***`, `Please press COMMAND+W till I'm happy`];
-      state.monsterStatus = text[randIndex];
-    } else if (state.tabCount <= 21 && state.tabCount >= 18) {
+      status.monsterStatus = text[randIndex];
+    } else if (status.tabCount <= 21 && status.tabCount >= 18) {
       text = [`At this point, uninstall chrome :>`, `At this point, uninstall chrome :>`];
-      state.monsterStatus = text[randIndex];
-    } else if (state.tabCount != 33 && state.tabCount >=22) {
-      state.monsterStatus = `You are confused.`;
-    } else if (state.tabCount = 33) {
-      state.monsterStatus = 'Welcome to the elite Po-Tah-To clan. Achievement unlocked: Hidden 33. '
+      status.monsterStatus = text[randIndex];
+    } else if (status.tabCount != 33 && status.tabCount >=22) {
+      status.monsterStatus = `You are confused.`;
+    } else if (status.tabCount = 33) {
+      status.monsterStatus = 'Welcome to the elite Po-Tah-To clan. Achievement unlocked: Hidden 33. '
     }
 
-    chrome.storage.local.set({monster: state}, () => {
-      globalState = state;
+    chrome.storage.local.set({monster: status}, () => {
+      globalState = status;
       handleEvolutionTimer();
     });
   });
 }
 
 chrome.runtime.onInstalled.addListener(() => {
-  getStorage().then(state => {
+  getStorage().then(status => {
     handleEvolutionTimer();
 
     chrome.tabs.create({

@@ -1,11 +1,11 @@
 'use strict';
 
 document.addEventListener(`DOMContentLoaded`, () => {
-  let state;
+  let status;
   const elements = {
     body: document.getElementById(`tabagotchi`),
     preloader: document.getElementById(`preloader-container`),
-    evolutionState: document.getElementById(`evolution-state`),
+    evolutionState: document.getElementById(`evolution-status`),
     evolutionUISegments: document.querySelectorAll('.evolution-segment'),
     evolutionSilhouettes: document.getElementById('evolution-silhouettes'),
     hpProgressBar: document.getElementById(`hp-indicator`),
@@ -30,16 +30,16 @@ document.addEventListener(`DOMContentLoaded`, () => {
   };
 
   chrome.storage.onChanged.addListener((changes, areaName) => {
-    state = changes.monster.newValue;
+    status = changes.monster.newValue;
 
     // preemptively call function to update UI based on evolution progress from prior tab/session
-    helper.updateEvolutionUI(elements, state);
+    helper.updateEvolutionUI(elements, status);
 
     // call handleEvolutionTimer to see if we meet tab count requirements
-    helper.handleEvolutionTimer(elements, state);
+    helper.handleEvolutionTimer(elements, status);
 
     // set UI
-    helper.setUI(elements, state);
+    helper.setUI(elements, status);
 
     // hide preloader
     elements.preloader.style.display = `none`;

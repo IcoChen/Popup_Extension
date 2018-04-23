@@ -182,7 +182,7 @@ header {
   height: 30px;
 }
 
-#evolution-state {
+#evolution-status {
   display: none;
 }
 
@@ -312,7 +312,7 @@ header {
 #monster-text {
   position: absolute;
   bottom: 50px;
-  width: 100%;
+  width: 100vw;
   text-align: center;
   font-family: 'Sofachrome';
   font-size: 18px;
