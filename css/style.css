@@ -279,7 +279,7 @@ header {
   height: inherit;
   width: 500px;
   margin: 0 auto;
-  position: relative;
+/*  position: relative;*/
   min-height: 400px;
 }
 
@@ -288,6 +288,7 @@ header {
 }
 
 #monster {
+  cursor: move;
   display: block;
   height: 200px;
   width: 200px;
