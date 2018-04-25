@@ -10,14 +10,14 @@ document.addEventListener(`DOMContentLoaded`, () => {
     // evolutionSilhouettes: document.getElementById('evolution-silhouettes'),
     hpProgressBar: document.getElementById(`hp-indicator`),
     hpState: document.getElementById(`hp-indicator-text`),
-    poop: {
-      poop1: document.getElementById(`poop-1`),
-      poop2: document.getElementById(`poop-2`),
-      poop3: document.getElementById(`poop-3`),
-      poop4: document.getElementById(`poop-4`),
-      poop5: document.getElementById(`poop-5`),
-      poop6: document.getElementById(`poop-6`)
-    },
+    // poop: {
+    //   poop1: document.getElementById(`poop-1`),
+    //   poop2: document.getElementById(`poop-2`),
+    //   poop3: document.getElementById(`poop-3`),
+    //   poop4: document.getElementById(`poop-4`),
+    //   poop5: document.getElementById(`poop-5`),
+    //   poop6: document.getElementById(`poop-6`)
+    // },
     monster: document.querySelector(`#monster a img`),
     monsterStatus: document.getElementById(`monster-text`),
     tabCount: document.getElementById(`tab-count`),

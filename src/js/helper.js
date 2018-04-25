@@ -1,109 +1,29 @@
 'use strict';
 
-
-// function updateMonsterState() {
-//   let state = {};
-//   getStorage()
-//   .then(result => {
-//     state = result;
-//     return getTabsCount();
-//   })
-//   .then(tabCount => {
-//     state.tabCount = tabCount;
-//     state.hp = MAX_HEALTH - 4 * tabCount;
-//     let text = [];
-//     const randIndex = Math.floor(Math.random() * (2));
-//     if (state.tabCount <= 2) {
-//       state.monsterStatus = `"You are a boss of tabs... and that's a good thing :)"`;
-//     } else if (state.tabCount <= 5 && state.tabCount >= 2) {
-//       text = [`"Damn son, not bad"`, `"Chill with the tabs"`];
-//       state.monsterStatus = text[randIndex];
-//     } else if (state.tabCount <= 9 && state.tabCount >= 6) {
-//       text = [ `"I c u with all them tabs"`, `"So, how many tabs r u gonna make? 6? 7? 8? -_-"`];
-//       state.monsterStatus = text[randIndex];
-//     } else if (state.tabCount <= 13 && state.tabCount >= 10) {
-//       text = [`"Um.. are you serious?"`, `"Is it you, Dounan?."`];
-//       state.monsterStatus = text[randIndex];
-//     } else if (state.tabCount <= 17 && state.tabCount >= 14) {
-//       text = [`"If you can tell me the 3rd tab from the left, I respect you. If not, close that $***"`, `"Hi, Forrest! Chill. bro. chill.`];
-//       state.monsterStatus = text[randIndex];
-//     } else if (state.tabCount <= 21 && state.tabCount >= 18) {
-//       text = [`"At this point, uninstall chrome :>"`, `"l2t you newb. psst..! it means Learn to Tab u scrub"`];
-//       state.monsterStatus = text[randIndex];
-//     } else if (state.tabCount != 33 && state.tabCount >=22) {
-//       state.monsterStatus = `"Ting is as confused."`;
-//     } else if (state.tabCount = 33) {
-//       state.monsterStatus = '"Welcome to the elite Po-Tah-To clan. You can now add this to your resume. Achievement unlocked: Hidden :33 (kisses) "'
-//     }
-
-//           });
-// }
-
 const helper = {
-
-  poop: (elements, status) => {
-    const allPoops = [elements.poop.poop1, elements.poop.poop2, elements.poop.poop3,
-      elements.poop.poop4, elements.poop.poop5, elements.poop.poop6];
-    let displayPoops = [];
-
-    // reset poops
-    allPoops.forEach(elem => {
-      elem.style.display = `none`;
-    });
-
-    // level 1 and level 2 have color thus we need colorized poops
-    // if (status.evolutionLevel > 0) {
-    //   allPoops.forEach(elem => {
-    //     elem.classList.add(`color`);
-    //   });
-    // }
-
-    if (status.hp <= 59 && status.hp >= 40) {
-      // monster is angry, show 4 poops
-      displayPoops = allPoops.slice(0,1);
-    } else if (status.hp <= 39 && status.hp >= 20) {
-      // monster is sick, show 5 poops
-      displayPoops = allPoops.slice(0,3);
-    } else if (status.hp <= 19 && status.hp >= 1) {
-      // monster is dying, show 6 poops
-      // no need to reassign poops array if all shown
-      displayPoops = allPoops;
-    }
-
-    // display the poops
-    displayPoops.forEach(elem => {
-      elem.style.display = `block`;
-    });
-  },
-  /*
-  * setRandomAsset
-  *
-  * Pick one of the three assets randomly, at each status. Diversified graphics to keep the
-  * user entertained.
-  */
   setRandomAsset: (elements, status) => {
     const randIndex = Math.floor(Math.random() * 3);
     const stateAssets = {
       state1: [
-        `../../assets/evolution/alien_green_celebrate.gif`
+        `../../assets/green/alien_green_celebrate.gif`
       ],
       state2: [
-        `/../../assets/evolution/alien_green_dance.gif`
+        `/../../assets/green/alien_green_dance.gif`
       ],
       state3: [
-        `../../assets/evolution/alien_green_thanks.gif`
+        `../../assets/green/alien_green_thanks.gif`
       ],
       state4: [
-        `../../assets/evolution/alien_green_idle.gif`
+        `../../assets/green/alien_green_idle.gif`
       ],
       state5: [
-        `../../assets/evolution/alien_green_sad.gif`
+        `../../assets/green/alien_green_sad.gif`
       ],
       state6: [
-        `../../assets/evolution/alien_green_eat.gif`
+        `../../assets/green/alien_green_eat.gif`
       ],
       state7: [
-        `../../assets/evolution/alien_green_attack.gif`
+        `../../assets/green/alien_green_attack.gif`
       ],
       state8: [
         `../../monster-status-1-variant-1.gif`
@@ -209,6 +129,6 @@ const helper = {
     helper.setRandomAsset(elements, status);
 
     // to poop or not to poop, that is the question
-    helper.poop(elements, status);
+    // helper.poop(elements, status);
   }
 };
