@@ -52,11 +52,11 @@ const helper = {
     });
 
     // level 1 and level 2 have color thus we need colorized poops
-    if (status.evolutionLevel > 0) {
-      allPoops.forEach(elem => {
-        elem.classList.add(`color`);
-      });
-    }
+    // if (status.evolutionLevel > 0) {
+    //   allPoops.forEach(elem => {
+    //     elem.classList.add(`color`);
+    //   });
+    // }
 
     if (status.hp <= 59 && status.hp >= 40) {
       // monster is angry, show 4 poops
@@ -142,54 +142,54 @@ const helper = {
   * Start the interval timer that will be used to evolve based on tab count
   * over a period of time.
   */
-  handleEvolutionTimer: (elements, status) => {
-    // if more than 5 tabs, kill evolution timer else start it if it hasnt already been.
-    // remove pending blink animation on next evolution segment.
-    if (status.tabCount > 5) {
-      const uiSegments = elements.evolutionUISegments;
-      for (let idx = 0; idx < uiSegments.length; idx++) {
-        uiSegments[idx].classList.remove(`toggle`);
-      }
-    }
-  },
+  // handleEvolutionTimer: (elements, status) => {
+  //   // if more than 5 tabs, kill evolution timer else start it if it hasnt already been.
+  //   // remove pending blink animation on next evolution segment.
+  //   if (status.tabCount > 5) {
+  //     const uiSegments = elements.evolutionUISegments;
+  //     for (let idx = 0; idx < uiSegments.length; idx++) {
+  //       uiSegments[idx].classList.remove(`toggle`);
+  //     }
+  //   }
+  // },
   /*
   * updateEvolutionUI
   *
   * Update evolution UI.
   */
-  updateEvolutionUI: (elements, status) => {
-    const evolutionLevel = status.evolutionLevel;
-    const numberOfSegments = status.evolutionStage;
-    const uiSegments = elements.evolutionUISegments;
+  // updateEvolutionUI: (elements, status) => {
+  //   const evolutionLevel = status.evolutionLevel;
+  //   const numberOfSegments = status.evolutionStage;
+  //   const uiSegments = elements.evolutionUISegments;
 
-    // we either havent evolved or are on a new evolution stage. turn off all evolution segments.
-    if (numberOfSegments === 0 && evolutionLevel < 2) {
-      for (let idx = 0; idx < uiSegments.length; idx++) {
-        uiSegments[idx].classList.remove(`on`);
-        uiSegments[idx].classList.remove(`toggle`);
-        uiSegments[idx].classList.add(`off`);
-      }
+  //   // we either havent evolved or are on a new evolution stage. turn off all evolution segments.
+  //   if (numberOfSegments === 0 && evolutionLevel < 2) {
+  //     for (let idx = 0; idx < uiSegments.length; idx++) {
+  //       uiSegments[idx].classList.remove(`on`);
+  //       uiSegments[idx].classList.remove(`toggle`);
+  //       uiSegments[idx].classList.add(`off`);
+  //     }
 
-      uiSegments[0].classList.add(`toggle`);
-    } else {
-      // we have evolved, turn on required number of segments.
-      for (let idx = 0; idx <= numberOfSegments; idx++) {
-        uiSegments[idx].classList.remove(`off`);
-        uiSegments[idx].classList.remove(`toggle`);
-        uiSegments[idx].classList.add(`on`);
-      }
+  //     uiSegments[0].classList.add(`toggle`);
+  //   } else {
+  //     // we have evolved, turn on required number of segments.
+  //     for (let idx = 0; idx <= numberOfSegments; idx++) {
+  //       uiSegments[idx].classList.remove(`off`);
+  //       uiSegments[idx].classList.remove(`toggle`);
+  //       uiSegments[idx].classList.add(`on`);
+  //     }
 
-      if (numberOfSegments < 10 && evolutionLevel < 2) {
-        uiSegments[numberOfSegments].classList.add(`toggle`);
-      }
-    }
+  //     if (numberOfSegments < 10 && evolutionLevel < 2) {
+  //       uiSegments[numberOfSegments].classList.add(`toggle`);
+  //     }
+  //   }
 
-    elements.evolutionSilhouettes.classList.remove(`level-0`);
-    elements.evolutionSilhouettes.classList.remove(`level-1`);
-    elements.evolutionSilhouettes.classList.add(`level-${status.evolutionLevel}`);
+  //   elements.evolutionSilhouettes.classList.remove(`level-0`);
+  //   elements.evolutionSilhouettes.classList.remove(`level-1`);
+  //   elements.evolutionSilhouettes.classList.add(`level-${status.evolutionLevel}`);
 
-    // helper.setUI(elements, status);
-  },
+  //   // helper.setUI(elements, status);
+  // },
   /*
   * setUI
   *
@@ -199,7 +199,7 @@ const helper = {
     const hp = status.hp <= 0 ? 0 : status.hp;
 
     // handle hp update
-    elements.evolutionState.innerText = `${status.evolutionStage}/10`;
+    // elements.evolutionState.innerText = `${status.evolutionStage}/10`;
     elements.hpProgressBar.style.width = `${hp}%`;
     elements.hpState.innerText = `${hp}/100`;
     elements.monsterStatus.innerText = `${status.monsterStatus}`;
