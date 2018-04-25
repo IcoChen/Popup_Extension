@@ -3,30 +3,30 @@
 document.addEventListener(`DOMContentLoaded`, () => {
   let status;
   const elements = {
-    body: document.getElementById(`tabagotchi`),
+    body: document.getElementById(`popup`),
     preloader: document.getElementById(`preloader-container`),
-    monster: document.querySelector(`#monster a img`),
-    monsterStatus: document.getElementById(`monster-text`),
+    pet: document.querySelector(`#pet a img`),
+    petStatus: document.getElementById(`pet-text`),
     tabCount: document.getElementById(`tab-count`),
     tips: document.querySelectorAll(`.tip`),
     tipModals: {
-      monster: document.getElementById(`monster-tip`)
+      pet: document.getElementById(`pet-tip`)
     }
   };
 
   chrome.storage.onChanged.addListener((changes, areaName) => {
-    status = changes.monster.newValue;
+    status = changes.pet.newValue;
 
     helper.setUI(elements, status);
 
     elements.preloader.style.display = `none`;
   });
 
-  elements.monster.addEventListener(`click`, e => {
+  elements.pet.addEventListener(`click`, e => {
     e.preventDefault();
-    elements.monster.style.marginTop = `-50px`;
+    elements.pet.style.marginTop = `-50px`;
     setTimeout(() => {
-      elements.monster.style.marginTop = `0px`;
+      elements.pet.style.marginTop = `0px`;
     }, 250);
   });
 
@@ -46,7 +46,7 @@ document.addEventListener(`DOMContentLoaded`, () => {
         return;
       }
       {
-        elements.tipModals.monster.style.display = `block`;
+        elements.tipModals.pet.style.display = `block`;
       }
 
       anchor.classList.add(`transition`);
@@ -56,7 +56,7 @@ document.addEventListener(`DOMContentLoaded`, () => {
       e.preventDefault();
       const anchor = e.currentTarget;
       {
-        elements.tipModals.monster.style.display = `none`;
+        elements.tipModals.pet.style.display = `none`;
       }
 
       anchor.classList.remove(`transition`);

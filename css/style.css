@@ -61,19 +61,6 @@ header {
 
 #evolution-container {
   height: 15px;
-  width: 250px;
-}
-
-#evolution-container ul {
-  text-align: center;
-}
-
-#evolution-container ul li {
-  display: inline-block;
-}
-
-.evolution-segment {
-  display: inline-block;
   width: 15px;
   height: 20px;
   margin: 0px -1.15px;
@@ -280,7 +267,7 @@ header {
   left: 89%;
 }
 
-#monster-container {
+#pet-container {
   height: inherit;
   width: 500px;
   margin: 0 auto;
@@ -293,7 +280,7 @@ header {
   cursor: move;
 }
 
-#monster {
+#pet {
   cursor: move;
   display: block;
   height: 200px;
@@ -303,19 +290,19 @@ header {
   top: 15%;
 }
 
-#monster a {
+#pet a {
   display: block;
   position: relative;
 }
 
-#monster a img {
+#pet a img {
   display: block;
 /*  position: absolute;*/
   width: 200px;
   height: 200px;
 }
 
-#monster-text {
+#pet-text {
   position: absolute;
   bottom: 50px;
   text-align: center;
@@ -427,7 +414,7 @@ header .tip img {
   top: 40px;
 }
 
-#monster-tip {
+#pet-tip {
  /* right: 25vw;
   bottom: 100px;*/
   position: relative;

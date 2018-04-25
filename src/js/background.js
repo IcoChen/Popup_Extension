@@ -14,21 +14,21 @@ function getTabsCount() {
 
 function getStorage() {
   return new Promise((resolve) => {
-    chrome.storage.local.get(`monster`, (data) => {
-      if (typeof data.monster !== `undefined`) {
-        globalState = data.monster;
-        resolve(data.monster);
+    chrome.storage.local.get(`pet`, (data) => {
+      if (typeof data.pet !== `undefined`) {
+        globalState = data.pet;
+        resolve(data.pet);
       } else {
           console.log("DEBUG: GETSTORAGE ELSE");
           const status = {
-            monster: ``,
-            monsterStatus: ``,
+            pet: ``,
+            petStatus: ``,
             tabCount: 0
           };
 
           getTabsCount().then(tabCount => {
             status.tabCount = tabCount;
-            return chrome.storage.local.set({monster: status});
+            return chrome.storage.local.set({pet: status});
           }).then(() => {
             globalState = status;
             resolve(status);
@@ -51,29 +51,29 @@ function updateMonsterState() {
     let text = [];
     const randIndex = Math.floor(Math.random() * (2));
     if (status.tabCount <= 2) {
-      status.monsterStatus = `You are a boss of tabs... and that's a good thing :)`;
+      status.petStatus = `You are a boss of tabs... and that's a good thing :)`;
     } else if (status.tabCount <= 5 && status.tabCount >= 2) {
       text = [`Damn son, not bad`, `Chill with the tabs`];
-      status.monsterStatus = text[randIndex];
+      status.petStatus = text[randIndex];
     } else if (status.tabCount <= 9 && status.tabCount >= 6) {
       text = [ `I c u with all them tabs`, `So, how many tabs r u gonna make? 6? 7? 8? -_-`];
-      status.monsterStatus = text[randIndex];
+      status.petStatus = text[randIndex];
     } else if (status.tabCount <= 13 && status.tabCount >= 10) {
       text = [`Um.. are you serious?`, `Chill and close some tabs yo.`];
-      status.monsterStatus = text[randIndex];
+      status.petStatus = text[randIndex];
     } else if (status.tabCount <= 17 && status.tabCount >= 14) {
       text = [`If you can tell me the 3rd tab from the left, I respect you. If not, close that $***`, `Please press COMMAND+W till I'm happy`];
-      status.monsterStatus = text[randIndex];
+      status.petStatus = text[randIndex];
     } else if (status.tabCount <= 21 && status.tabCount >= 18) {
       text = [`At this point, uninstall chrome :>`, `At this point, uninstall chrome :>`];
-      status.monsterStatus = text[randIndex];
+      status.petStatus = text[randIndex];
     } else if (status.tabCount != 33 && status.tabCount >=22) {
-      status.monsterStatus = `You are confused.`;
+      status.petStatus = `You are confused.`;
     } else if (status.tabCount = 33) {
-      status.monsterStatus = 'Welcome to the elite Po-Tah-To clan. Achievement unlocked: Hidden 33. '
+      status.petStatus = 'Welcome to the elite Po-Tah-To clan. Achievement unlocked: Hidden 33. '
     }
 
-    chrome.storage.local.set({monster: status}, () => {
+    chrome.storage.local.set({pet: status}, () => {
       globalState = status;
       // handleEvolutionTimer();
     });

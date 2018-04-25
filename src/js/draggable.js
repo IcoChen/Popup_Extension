@@ -1,7 +1,7 @@
 console.log("draggable loaded");
 
 //Make the DIV element draggagle:
-dragElement(document.getElementById(("monster")));
+dragElement(document.getElementById(("pet")));
 
 function dragElement(elmnt) {
   console.log("the element is" + elmnt);
