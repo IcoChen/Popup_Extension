@@ -526,11 +526,10 @@ header .tip img {
 }
 /* clock */
 #txt {
-  font-size: 40px;
-  font-weight: bold;
+  font-size: 60px;
   margin-top: 1.2%;
   display: block;
   position: fixed;
-  margin-left: 45%;
+  margin-left: 42%;
   font-family: 'FutureM';
 }

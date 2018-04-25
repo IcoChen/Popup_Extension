@@ -1,8 +1,6 @@
 'use strict';
 
 const TIME_INTERVAL = 3600000;
-// const MAX_HEALTH = 100;
-// let evolutionInterval = undefined;
 let globalState = {};
 
 function getTabsCount() {
@@ -23,10 +21,6 @@ function getStorage() {
       } else {
           console.log("DEBUG: GETSTORAGE ELSE");
           const status = {
-            // hp: MAX_HEALTH,
-            // evolutionLevel: 0,
-            // evolutionStage: 0,
-            // evolutionTimestamp: 0,
             monster: ``,
             monsterStatus: ``,
             tabCount: 0
@@ -44,50 +38,6 @@ function getStorage() {
   });
 }
 
-// function clearEvolutionTimer() {
-//     clearInterval(evolutionInterval);
-//     evolutionInterval = undefined;
-// }
-
-// function handleEvolutionTimer() {
-
-//   // if more than 5 tabs, kill evolution timer else start it if it hasnt already been.
-//   // remove pending blink animation on next evolution segment.
-
-//   const tabCount = globalState.tabCount;
-
-//   if (tabCount > 5) {
-//     clearEvolutionTimer();
-//     return;
-//   }
-
-//   const now = Date.now();
-//   const canUpdate = now - globalState.evolutionTimestamp >= TIME_INTERVAL ? true : false;
-
-//   if (tabCount < 6 && typeof evolutionInterval === `undefined` && canUpdate) {
-//     evolutionInterval = setInterval(() => {
-
-//       if (globalState.evolutionLevel < 2) {
-//         if (globalState.evolutionStage < 9) {
-//           globalState.evolutionStage++;
-//           globalState.evolutionTimestamp = Date.now();
-//         } else if (globalState.evolutionStage === 9) {
-//           globalState.evolutionStage = 0;
-//           globalState.evolutionLevel++;
-//           globalState.evolutionTimestamp = Date.now();
-//         }
-//       } else if (globalState.evolutionLevel === 2) {
-//         globalState.evolutionStage = 9;
-//         globalState.evolutionTimestamp = Date.now();
-//         clearEvolutionTimer();
-//       }
-
-//       globalState.lastUpdatedAt = Date.now();
-//       chrome.storage.local.set({monster: globalState});
-//       // console.log(`DEBUG: evolution timer started`, evolutionInterval, status);
-//     }, TIME_INTERVAL);
-//   }
-// }
 
 function updateMonsterState() {
   let status = {};
