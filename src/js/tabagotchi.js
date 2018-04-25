@@ -8,8 +8,8 @@ document.addEventListener(`DOMContentLoaded`, () => {
     // evolutionState: document.getElementById(`evolution-status`),
     // evolutionUISegments: document.querySelectorAll('.evolution-segment'),
     // evolutionSilhouettes: document.getElementById('evolution-silhouettes'),
-    hpProgressBar: document.getElementById(`hp-indicator`),
-    hpState: document.getElementById(`hp-indicator-text`),
+    // hpProgressBar: document.getElementById(`hp-indicator`),
+    // hpState: document.getElementById(`hp-indicator-text`),
     // poop: {
     //   poop1: document.getElementById(`poop-1`),
     //   poop2: document.getElementById(`poop-2`),
@@ -24,7 +24,7 @@ document.addEventListener(`DOMContentLoaded`, () => {
     tips: document.querySelectorAll(`.tip`),
     tipModals: {
       // evolution: document./*g*/etElementById(`evolution-tip`),
-      health: document.getElementById(`health-tip`),
+      // health: document.getElementById(`health-tip`),
       monster: document.getElementById(`monster-tip`)
     }
   };
@@ -70,9 +70,7 @@ document.addEventListener(`DOMContentLoaded`, () => {
       if (anchor.classList.contains(`transition`)) {
         return;
       }
-       if (anchor.classList.contains(`health`)) {
-        elements.tipModals.health.style.display = `block`;
-      } else {
+      {
         elements.tipModals.monster.style.display = `block`;
       }
 
@@ -85,9 +83,7 @@ document.addEventListener(`DOMContentLoaded`, () => {
 
       // if (anchor.classList.contains(`evolution`)) {
       //   elements.tipModals.evolution.style.display = `none`;
-      if (anchor.classList.contains(`health`)) {
-        elements.tipModals.health.style.display = `none`;
-      } else {
+      {
         elements.tipModals.monster.style.display = `none`;
       }
 

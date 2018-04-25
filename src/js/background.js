@@ -1,7 +1,7 @@
 'use strict';
 
 const TIME_INTERVAL = 3600000;
-const MAX_HEALTH = 100;
+// const MAX_HEALTH = 100;
 // let evolutionInterval = undefined;
 let globalState = {};
 
@@ -23,7 +23,7 @@ function getStorage() {
       } else {
           console.log("DEBUG: GETSTORAGE ELSE");
           const status = {
-            hp: MAX_HEALTH,
+            // hp: MAX_HEALTH,
             // evolutionLevel: 0,
             // evolutionStage: 0,
             // evolutionTimestamp: 0,
@@ -97,7 +97,7 @@ function updateMonsterState() {
     return getTabsCount();
   }).then(tabCount => {
     status.tabCount = tabCount;
-    status.hp = MAX_HEALTH - 4 * tabCount;
+    // status.hp = MAX_HEALTH - 4 * tabCount;
     let text = [];
     const randIndex = Math.floor(Math.random() * (2));
     if (status.tabCount <= 2) {
