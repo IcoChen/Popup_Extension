@@ -5,9 +5,9 @@ document.addEventListener(`DOMContentLoaded`, () => {
   const elements = {
     body: document.getElementById(`tabagotchi`),
     preloader: document.getElementById(`preloader-container`),
-    evolutionState: document.getElementById(`evolution-status`),
-    evolutionUISegments: document.querySelectorAll('.evolution-segment'),
-    evolutionSilhouettes: document.getElementById('evolution-silhouettes'),
+    // evolutionState: document.getElementById(`evolution-status`),
+    // evolutionUISegments: document.querySelectorAll('.evolution-segment'),
+    // evolutionSilhouettes: document.getElementById('evolution-silhouettes'),
     hpProgressBar: document.getElementById(`hp-indicator`),
     hpState: document.getElementById(`hp-indicator-text`),
     poop: {
@@ -23,7 +23,7 @@ document.addEventListener(`DOMContentLoaded`, () => {
     tabCount: document.getElementById(`tab-count`),
     tips: document.querySelectorAll(`.tip`),
     tipModals: {
-      evolution: document.getElementById(`evolution-tip`),
+      // evolution: document./*g*/etElementById(`evolution-tip`),
       health: document.getElementById(`health-tip`),
       monster: document.getElementById(`monster-tip`)
     }
@@ -33,10 +33,10 @@ document.addEventListener(`DOMContentLoaded`, () => {
     status = changes.monster.newValue;
 
     // preemptively call function to update UI based on evolution progress from prior tab/session
-    helper.updateEvolutionUI(elements, status);
+    // helper.updateEvolutionUI(elements, status);
 
     // call handleEvolutionTimer to see if we meet tab count requirements
-    helper.handleEvolutionTimer(elements, status);
+    // helper.handleEvolutionTimer(elements, status);
 
     // set UI
     helper.setUI(elements, status);
@@ -70,10 +70,7 @@ document.addEventListener(`DOMContentLoaded`, () => {
       if (anchor.classList.contains(`transition`)) {
         return;
       }
-
-      if (anchor.classList.contains(`evolution`)) {
-        elements.tipModals.evolution.style.display = `block`;
-      } else if (anchor.classList.contains(`health`)) {
+       if (anchor.classList.contains(`health`)) {
         elements.tipModals.health.style.display = `block`;
       } else {
         elements.tipModals.monster.style.display = `block`;
@@ -86,9 +83,9 @@ document.addEventListener(`DOMContentLoaded`, () => {
       e.preventDefault();
       const anchor = e.currentTarget;
 
-      if (anchor.classList.contains(`evolution`)) {
-        elements.tipModals.evolution.style.display = `none`;
-      } else if (anchor.classList.contains(`health`)) {
+      // if (anchor.classList.contains(`evolution`)) {
+      //   elements.tipModals.evolution.style.display = `none`;
+      if (anchor.classList.contains(`health`)) {
         elements.tipModals.health.style.display = `none`;
       } else {
         elements.tipModals.monster.style.display = `none`;
