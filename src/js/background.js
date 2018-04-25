@@ -12,6 +12,19 @@ function getTabsCount() {
   });
 }
 
+// set icon's text
+function updateBadgeText() {
+  var displayOption = localStorage["badgeDisplayOption"];
+  if ( typeof displayOption == "undefined" || displayOption == "allWindows") {
+    chrome.browserAction.setBadgeText({text: String(allWindowsTabCount)});
+    updateBadgeTitle(allWindowsTabCount);
+  } else {
+    //Use callback
+    //This feature is currently disabled from options.html and options.js
+    count = getCurrentWindowTabs(updateCurrentWindowBadge);
+  }
+}
+
 function getStorage() {
   return new Promise((resolve) => {
     chrome.storage.local.get(`pet`, (data) => {
