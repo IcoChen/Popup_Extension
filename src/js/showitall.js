@@ -1,3 +1,11 @@
+//get count of tabs in current window. Required for the popoup display box.
+function getCurrentWindowTabCount() {
+  chrome.tabs.query({currentWindow:true}, function(tabs) {
+    lenText = 'Number of tabs on this window:<strong> ' + tabs.length + '</strong>';
+    document.getElementById('windowTabs').innerHTML = lenText;
+  });
+}
+
 //get tabs in current window
 function getCurrentWindowTabs(callback) {
   chrome.tabs.query({currentWindow:true}, function(tabs) {
@@ -23,7 +31,7 @@ function displayResults(tabs){
     var cell2 = row.insertCell(1);
     var cell3 = row.insertCell(2);
 
-    cell1.innerHTML = "<img src=" + tabs[i].favIconUrl + " width='16' height='16'>";
+    cell1.innerHTML = "<img src=" + tabs[i].favIconUrl + " width='16px' height='16px'>";
     cell2.innerHTML = "<span style=cursor:pointer><font color=red>X</font></span>";
     cell3.innerHTML = "<span style=cursor:pointer title='" + tabs[i].url + "'>" +  tabs[i].title + "</span>";
 
