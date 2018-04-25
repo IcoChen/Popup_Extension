@@ -246,7 +246,7 @@ bottom: 0px;
 #tab-count {
   text-align: center;
   font-size: 15px;
-  font-family: 'Irresistor';
+  font-family: 'FutureM';
   text-transform: uppercase;
   color: #545454;
   font-weight: normal;
@@ -262,7 +262,6 @@ bottom: 0px;
 
 .tip {
   display: inline-block;
-  position: absolute;
 }
 
 header .tip {
@@ -328,8 +327,10 @@ header .tip img {
 #pet-tip {
  /* right: 25vw;
  bottom: 100px;*/
- position: relative;
+ position: absolute;
  margin: 0 auto;
+ right: 10px;
+ top: 50vh;
  /*display: inline-block;*/
  margin-top: 0px;
 

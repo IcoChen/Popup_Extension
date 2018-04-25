@@ -1,4 +1,5 @@
 //Save options to localstorage
+
 function save_options(type, value) {
   console.log('type: ' + type + ', value: ' + value);
   if (type == "popupCount") {
@@ -34,10 +35,10 @@ function restore_options() {
       radios[i].checked = true;
     }
   }
-  
+
   // restore options for tabDedupe
   document.getElementById("tabDedupe").checked = Boolean(localStorage["tabDedupe"]);
-  
+
   // Restore tab janitor options.
   document.getElementById("tabJanitor").checked = Boolean(localStorage["tabJanitor"]);
   document.getElementById("tabJanitorDays").value = localStorage["tabJanitorDays"] || 5;
@@ -74,7 +75,7 @@ checkbox.addEventListener("click", (function(value) {
       save_options("tabDedupe", value);
     }
   })(checkbox.checked));
-  
+
 // Add event listener for tabJanitor checkbox.
 var janitorCheckbox = document.getElementById("tabJanitor");
 janitorCheckbox.addEventListener("click", (function(value) {

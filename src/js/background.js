@@ -105,6 +105,7 @@ chrome.runtime.onInstalled.addListener(() => {
 
 chrome.tabs.onCreated.addListener(() => {
   updateMonsterState();
+  displayResults();
 });
 
 chrome.tabs.onRemoved.addListener(() => {

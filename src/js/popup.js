@@ -10,7 +10,7 @@ document.addEventListener(`DOMContentLoaded`, () => {
     tabCount: document.getElementById(`tab-count`),
     tips: document.querySelectorAll(`.tip`),
     tipModals: {
-      pet: document.getElementById(`pet-tip`)
+    pet: document.getElementById(`pet-tip`)
     }
   };
 
@@ -37,7 +37,7 @@ document.addEventListener(`DOMContentLoaded`, () => {
       e.preventDefault();
     });
 
-    tip.addEventListener(`mouseenter`, e => {
+    tip.addEventListener(`click`, e => {
       e.preventDefault();
       const anchor = e.currentTarget;
 
