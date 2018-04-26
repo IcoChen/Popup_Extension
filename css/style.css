@@ -16,7 +16,7 @@ h1 {
 
 #content {
     padding: 10px;
-    background-color: #eee;
+    background-color: white;
     display: flex;
     flex: 1 1 auto;
     height: 100%;
@@ -26,8 +26,8 @@ h1 {
 #content > .group {
     margin: 10px;
     padding: 10px;
-    border: 1px solid #cfcfcf;
-    background-color: #ddd;
+    border: 1px solid white;
+    background-color: white;
     float: left;
     display: flex;
     flex-flow: column wrap;
@@ -38,7 +38,7 @@ h1 {
 #content > .group .item {
     margin: 10px;
     padding: 10px;
-    background-color: #aaa;
+    background-color: white;
 }
 
 @font-face {
