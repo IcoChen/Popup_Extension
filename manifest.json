@@ -3,7 +3,7 @@
 
  "name": "Tabzilla",
  "description": "Interactive way of displaying old-school boring tabs",
- "version": "1.1.1",
+ "version": "2.1.1",
  "homepage_url": "http://www.popthatsubs.com",
  "icons": {"128": "images/popup.png"},
  "browser_action": {
