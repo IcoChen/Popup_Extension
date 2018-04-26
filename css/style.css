@@ -71,6 +71,11 @@ h1 {
   src: url("../fonts/FutureMillennium.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: 'Timeburner';
+  src: url("../fonts/timeburnernormal.ttf") format("truetype");
+}
+
 /* header */
 header {
   display: block;
@@ -464,4 +469,5 @@ header .tip img {
 #tabshow {
   font-size: 15px;
   right: 0;
+  font-family: 'Timeburner';
 }
