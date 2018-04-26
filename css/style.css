@@ -1,17 +1,45 @@
 /* general */
-* {
-  padding: 0;
-  margin: 0;
+html {
+    height: 100%;
 }
 
 body {
-  position: fixed;
-  display: block;
-  height: 100vh;
-  width: 100vw;
-  min-width: 670px;
+    /*height: 100%;*/
+    display: flex;
+    flex-flow: column nowrap;
 }
 
+h1 {
+    padding: 1em;
+}
+
+
+#content {
+    padding: 10px;
+    background-color: #eee;
+    display: flex;
+    flex: 1 1 auto;
+    height: 100%;
+    width: 100%;
+}
+
+#content > .group {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #cfcfcf;
+    background-color: #ddd;
+    float: left;
+    display: flex;
+    flex-flow: column wrap;
+    flex: 1 1 30%;
+    max-height: 100%;
+}
+
+#content > .group .item {
+    margin: 10px;
+    padding: 10px;
+    background-color: #aaa;
+}
 
 @font-face {
   font-family: 'Tr2n';
@@ -431,4 +459,9 @@ header .tip img {
   position: fixed;
   margin-left: 42%;
   font-family: 'FutureM';
+}
+
+#tabshow {
+  font-size: 15px;
+  right: 0;
 }

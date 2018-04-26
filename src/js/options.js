@@ -59,35 +59,47 @@ function restore_options() {
 document.addEventListener("DOMContentLoaded", restore_options);
 
 //Add eventlisteners to the radio buttons
-var radios = document.popupOptionsForm.tabCountRadios;
-for (var i = 0; i < radios.length; i++) {
-  radios[i].addEventListener("click", (function(value) {
-    return function() {
-      save_options("popupCount", value);
-    }
-  })(radios[i].value));
+if (document.popupOptionsForm) {
+  var radios = document.popupOptionsForm.tabCountRadios;
+  for (var i = 0; i < radios.length; i++) {
+    radios[i].addEventListener("click", (function(value) {
+      return function() {
+        save_options("popupCount", value);
+      }
+    })(radios[i].value));
+  }
 }
 
 // Add event listener for tabDedupe checkbox.
 var checkbox = document.getElementById("tabDedupe");
-checkbox.addEventListener("click", (function(value) {
-    return function() {
-      save_options("tabDedupe", value);
-    }
-  })(checkbox.checked));
+
+if (checkbox) {
+  checkbox.addEventListener("click", (function(value) {
+      return function() {
+        save_options("tabDedupe", value);
+      }
+    })(checkbox.checked));
+}
 
 // Add event listener for tabJanitor checkbox.
 var janitorCheckbox = document.getElementById("tabJanitor");
-janitorCheckbox.addEventListener("click", (function(value) {
-    return function() {
-      save_options("tabJanitor", value);
-    }
-  })(janitorCheckbox.checked));
+if (janitorCheckbox) {
+  janitorCheckbox.addEventListener("click", (function(value) {
+      return function() {
+        save_options("tabJanitor", value);
+      }
+    })(janitorCheckbox.checked));
+
+}
 
 // Add event listener for tabJanitor checkbox.
-document.getElementById("tabJanitorDays").oninput = function() {
-  save_options("tabJanitorDays", document.getElementById("tabJanitorDays").valueAsNumber);
-};
+const tabJanitorDays = document.getElementById("tabJanitorDays")
+
+if (tabJanitorDays) {
+  tabJanitorDays.oninput = function() {
+    save_options("tabJanitorDays", document.getElementById("tabJanitorDays").valueAsNumber);
+  };
+}
 
 /*var radios = document.badgeOptionsForm.badgeCountRadios;
 for (var i = 0; i < radios.length; i++) {
@@ -98,9 +110,9 @@ for (var i = 0; i < radios.length; i++) {
   })(radios[i].value));
 }*/
 
-document.getElementById("refreshButton").addEventListener("click", function() {
-  location.reload();
-});
+// document.getElementById("refreshButton").addEventListener("click", function() {
+//   location.reload();
+// });
 
-document.getElementById("windowsCount").innerHTML = localStorage["windowsCount"];
-document.getElementById("tabsCount").innerHTML = localStorage["allWindowsTabsCount"];
+// document.getElementById("windowsCount").innerHTML = localStorage["windowsCount"];
+// document.getElementById("tabsCount").innerHTML = localStorage["allWindowsTabsCount"];

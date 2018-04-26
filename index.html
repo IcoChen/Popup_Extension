@@ -28,69 +28,65 @@
         <img src="assets/alien_green_greet.gif">
       </a>
     </div>
+    <div id="content">
+      <div class="group">
+        <div id= "tabshow" draggable="true" width="25%" height="50%">
+          <p class='box' id='windowTabs'></p>
+          <table id='tabsTable'></table>
+        </div>
+      </div>
 
-    <div id= "tabshow">
-      <p class='box' id='windowTabs'></p>
-      <table id='tabsTable'></table>
-    </div>
-
-    <style>
-    #div1 {
-      width: 350px;
-      height: 70px;
-      padding: 10px;
-      border: 1px solid #aaaaaa;
-      text-align: : center;
-    }
-  </style>
-
-  <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-  <br>
-
-
-
-  <div id="pet-container">
-    <h2 id="pet-text"></h2>
-    <div class="tabcounter">
-      <h4 id="tab-count">You have 0 tabs open</h4> <span class="tips-container"><a class="tip pet" href="#"><img src="assets/info-button.png"></a></span>
-    </div>
-
-  </div>
-  <div id="pet-tip"  class="tip-modal">
-
-    <h3>Popup window</h3>
-    <form name="popupOptionsForm">
-      <label><input type="radio" id ="defaultPopupSelection" name="tabCountRadios" value="currentWindow">List tabs from the current window only<br></label>
-      <label><input type="radio" name="tabCountRadios" value="allWindows">List tabs from all windows<br></label>
-    </form>
-    <label><input type="checkbox" id="tabDedupe" name="tabDedupe" value="dedupe">Detect and prompt duplicate tab creation.<br></label>
-    <label><input type="checkbox" id="tabJanitor" name="tabJanitor" value="tabJanitor"/>Auto-close tabs unused for more than
-      <input type="number" id="tabJanitorDays" name="tabJanitorDays" value="5" min="1" max="30"/> days.</label><br>
-    <div id="status"></div>
+    <!-- <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div> -->
     <br>
-    <hr>
-    <h3>Current Stats</h3>
-    Total number of windows: <span id="windowsCount"></span> <br>
-    Total number of tabs: <span id="tabsCount"></span> <br>
 
-    <input type="button" id="refreshButton" value="Refresh Stats">
 
-    <p> This is where you will see the total of your opened tabs!</p>
+    <div class="group">
+      <div id="pet-container">
+        <h2 id="pet-text"></h2>
+        <div class="tabcounter">
+          <h4 id="tab-count">You have 0 tabs open</h4> <span class="tips-container"><a class="tip pet" href="#"><img src="assets/info-button.png"></a></span>
+        </div>
+
+      </div>
+      <div id="pet-tip"  class="tip-modal">
+
+        <h3>Popup window</h3>
+        <form name="popupOptionsForm">
+          <label><input type="radio" id ="defaultPopupSelection" name="tabCountRadios" value="currentWindow">List tabs from the current window only<br></label>
+          <label><input type="radio" name="tabCountRadios" value="allWindows">List tabs from all windows<br></label>
+        </form>
+        <label><input type="checkbox" id="tabDedupe" name="tabDedupe" value="dedupe">Detect and prompt duplicate tab creation.<br></label>
+        <label><input type="checkbox" id="tabJanitor" name="tabJanitor" value="tabJanitor"/>Auto-close tabs unused for more than
+          <input type="number" id="tabJanitorDays" name="tabJanitorDays" value="5" min="1" max="30"/> days.</label><br>
+          <div id="status"></div>
+          <br>
+          <hr>
+          <h3>Current Stats</h3>
+          Total number of windows: <span id="windowsCount"></span> <br>
+          Total number of tabs: <span id="tabsCount"></span> <br>
+
+          <input type="button" id="refreshButton" value="Refresh Stats">
+
+          <p> This is where you will see the total of your opened tabs!</p>
+        </div>
+      </div>
+
+  <div class="group"></div>
   </div>
-</div>
-
-<!-- footer -->
-
-<footer>
-
-  <a href="http://Kappamon.com" class="credits" target="_blank"><p>Special thanks to Kappamon ! <br> Make sure to check em' out here!</p>
-  </footer>
-
-  <div id="preloader-container">
-    <div class="loader"></div>
   </div>
-  <script src="src/js/draggable.js"></script>
+
+  <!-- footer -->
+
+  <footer>
+
+    <a href="http://Kappamon.com" class="credits" target="_blank"><p>Special thanks to Kappamon ! <br> Make sure to check em' out here!</p>
+    </footer>
+
+    <div id="preloader-container">
+      <div class="loader"></div>
+    </div>
+    <script src="src/js/draggable.js"></script>
 <!--   <script src="src/js/batterybox.js"></script>
- -->
+-->
 </body>
 </html>
