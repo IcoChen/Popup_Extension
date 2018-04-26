@@ -1,5 +1,22 @@
 console.log("draggable loaded");
 
+function allowDrop(ev) {
+  console.log(ev);
+    ev.preventDefault();
+}
+
+function drag(ev) {
+  console.log(ev);
+    ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+    console.log(ev);
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
+}
+
 //Make the DIV element draggagle:
 dragElement(document.getElementById(("pet")));
 
@@ -42,3 +59,17 @@ function dragElement(elmnt) {
     document.onmousemove = null;
   }
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  document.getElementById('tabshow').addEventListener('dragstart', drag);
+
+  // document.addEventListener('drop', drop);
+
+  document.querySelectorAll('.group').forEach((group) => {
+    console.log(group);
+    group.addEventListener('dragover', allowDrop);
+    group.addEventListener('drop', (ev) => {
+      drop(ev);
+    });
+  });
+});
