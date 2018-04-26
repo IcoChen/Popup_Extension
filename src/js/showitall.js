@@ -33,11 +33,11 @@ function displayResults(tabs){
     var cell2 = row.insertCell(1);
     var cell3 = row.insertCell(2);
 
-    cell1.innerHTML = "<img src=" + tabs[i].favIconUrl + " width='16px' height='16px'>";
-    cell2.innerHTML = "<span style=cursor:pointer><font color=green>X</font></span>";
+    cell1.innerHTML = "<span style=cursor:pointer><font color=green>X</font></span>";
+    cell2.innerHTML = "<img src=" + tabs[i].favIconUrl + " width='16px' height='16px'>";
     cell3.innerHTML = "<span style=cursor:pointer title='" + tabs[i].url + "'>" +  tabs[i].title + "</span>";
 
-    cell2.addEventListener("click", (function(tabID) {
+    cell1.addEventListener("click", (function(tabID) {
       return function() {
         closeTab(tabID);
         console.log('closed');
