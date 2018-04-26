@@ -2,7 +2,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 function getCurrentWindowTabCount() {
   chrome.tabs.query({currentWindow:true}, function(tabs) {
-    lenText = 'Number of tabs on this window:<strong> ' + (tabs.length-1) + '</strong>';
+    lenText = 'Number of tabs on this window:<strong> ' + (tabs.length) + '</strong>';
     document.getElementById('windowTabs').innerHTML = lenText;
   });
 }

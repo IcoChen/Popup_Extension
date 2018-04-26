@@ -48,7 +48,7 @@ const helper = {
 
   setUI: (elements, status) => {
     elements.petStatus.innerText = `${status.petStatus}`;
-    elements.tabCount.innerText = `You have ${status.tabCount} tabs open`;
+    // elements.tabCount.innerText = `You have ${status.tabCount} tabs open`;
     helper.setRandomAsset(elements, status);
   }
 };
