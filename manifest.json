@@ -3,11 +3,13 @@
 
  "name": "Tabzilla",
  "description": "Interactive way of displaying old-school boring tabs",
- "version": "2.1.1",
- "homepage_url": "http://www.popthatsubs.com",
+ "version": "3.1.1",
+ "options_page": "popup.html",
+ "homepage_url": "http://www.tabzilla.life",
  "icons": {"128": "images/popup.png"},
  "browser_action": {
-  "default_icon": "images/approved1.png"
+  "default_icon": "images/approved1.png",
+   "default_popup": "popup.html"
  },
  "chrome_url_overrides": {
      "newtab": "index.html"
