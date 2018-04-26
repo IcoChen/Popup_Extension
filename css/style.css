@@ -41,29 +41,10 @@ h1 {
     background-color: white;
 }
 
-@font-face {
-  font-family: 'Tr2n';
-  src: url('../fonts/Tr2n.ttf') format("truetype");
-}
-
-@font-face {
-  font-family: 'Irresistor';
-  src: url('../fonts/Irresistor.ttf') format("truetype");
-}
 
 @font-face {
   font-family: 'Xirod';
   src: url("../fonts/xirod.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: 'Sofachrome';
-  src: url("../fonts/sofachrome.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: 'Atomic';
-  src: url("../fonts/Atomic.TTF") format("truetype");
 }
 
 @font-face {
@@ -187,7 +168,7 @@ header {
 #hp-outer-container p {
   text-align: center;
   padding-bottom: 5px;
-  font-family: 'Irresistor';
+ /* font-family: 'Irresistor';*/
   color: #545454;
   font-weight: normal;
 
