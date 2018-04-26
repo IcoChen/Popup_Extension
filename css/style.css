@@ -30,6 +30,7 @@ h1 {
     background-color: white;
     float: left;
     display: flex;
+    flex-basis: 66%;
     flex-flow: column wrap;
     flex: 1 1 30%;
     max-height: 100%;
@@ -228,7 +229,7 @@ min-height: 400px;
 }
 
 #pet-text {
-  position: absolute;
+  position: relative;
   bottom: 50px;
   text-align: center;
   font-family: 'FutureM';
