@@ -26,6 +26,7 @@ function displayResults(tabs){
   getCurrentWindowTabCount();
   numTabs = tabs.length;
   var table = document.getElementById('tabsTable');
+
   for (var i=0; i<numTabs; i++) {
     var row = table.insertRow(i);
     var cell1 = row.insertCell(0);
@@ -33,12 +34,18 @@ function displayResults(tabs){
     var cell3 = row.insertCell(2);
 
     cell1.innerHTML = "<img src=" + tabs[i].favIconUrl + " width='16px' height='16px'>";
-    cell2.innerHTML = "<span style=cursor:pointer><font color=red>X</font></span>";
+    cell2.innerHTML = "<span style=cursor:pointer><font color=green>X</font></span>";
     cell3.innerHTML = "<span style=cursor:pointer title='" + tabs[i].url + "'>" +  tabs[i].title + "</span>";
 
     cell2.addEventListener("click", (function(tabID) {
       return function() {
         closeTab(tabID);
+        console.log('closed');
+
+        setTimeout(() => {
+          table.innerHTML = '';
+          getAllTabs(displayResults);
+        }, 500);
       }
     })(tabs[i].id));
 
@@ -60,7 +67,7 @@ function openTab(tabID, windowID) {
 function closeTab(tabID) {
   chrome.tabs.remove(tabID);
   // reload popup to refresh the count and links
-  window.location.reload();
+  // window.location.reload();
 }
 
 var tabsDisplayOption = localStorage["popupDisplayOption"];
