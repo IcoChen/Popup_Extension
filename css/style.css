@@ -233,7 +233,7 @@ min-height: 400px;
   bottom: 50px;
   text-align: center;
   font-family: 'FutureM';
-  font-size: 38px;
+  font-size: 36px;
   opacity: .75;
   color: #545454;
 }
@@ -315,7 +315,7 @@ header .tip img {
 }
 
 .credits img {
-  width: 300px;
+  width: 60px;
   opacity: .95;
 }
 
@@ -452,4 +452,13 @@ header .tip img {
   font-size: 15px;
   right: 0;
   font-family: 'Timeburner';
+}
+
+.logo {
+margin: 0 auto;
+display: block;
+top: 0px;
+right:0%;
+position: absolute;
+opacity: .85;
 }
