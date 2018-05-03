@@ -1,7 +1,7 @@
 WELCOME to Tabzilla!
 
 
-First of all, I would like to thank all that have downloaded our extension to try it out. This project was created by couple of Awesome people that you can find in contact tab of our website: https://www.tabzilla.life
+First of all, I would like to thank all that have downloaded our extension to try it out. This project was created by couple of Awesome people that you can find in contact tab of our website: https://www.tabzilla.life／
 
 Since this extension was created on a short time with very limited number of people, we are aware that this extension needs work. A lot of work. Please do let us know some of the features you would like added or bugs that needs fixing via: https://potahto3clan.sarahah.com/
 
